@@ -18,7 +18,7 @@ pgm_process = {"engineering" : "To apply for engineering, you need to visit our 
                "science": "For science programs, youll typically need to submit your\n1. academic transcripts\n2. letters of recommendation(atleast 1)\n3. admission test score\n4. a statement of purpose highlighting your research interests and goals."
         }   
 
-requirements = {"engineering":"Eligibility criteria:\n1. Pass 10+2 or equivalent with Physics, Chemistry, and Mathematics as compulsory subjects.\n2. Secure at least 50% marks in aggregate.\n3. Appear for entrance test\n\n",
+eligibility = {"engineering":"Eligibility criteria:\n1. Pass 10+2 or equivalent with Physics, Chemistry, and Mathematics as compulsory subjects.\n2. Secure at least 50% marks in aggregate.\n3. Appear for entrance test\n\n",
                 "mba":"Eligibility criteria:\n1. Bachelor's degree in any discipline with a minimum aggregate of 50%\n2. 21 years of age\n3. Good rank in GMAT/CAT\n\n",
                 "arts":"Eligibility criteria:\n1. Complete Class XII in any stream from a recognised board with a minimum aggregate percentage of 60%).\n2. Basic knowledge of Arts (Fine/ Visual/ Performing) subjects to which candidates are applying.\n\n",
                 "science":"Eligibility criteria:\n1. 10+2 with minimum aggregate score of 45%\n2. Accepting Exams: JEE Main, JEE Advanced, KCET\n\n"}
@@ -32,6 +32,35 @@ course = {"engineering": ["computer science", "mechanical", "electrical", "civil
           "mba":["marketing", "finance", "hr", "operations", "international business"],
           "arts":["english", "history", "psychology" ,"philosophy"],
           "science":["physics", "chemistry", "biology", "mathematics"]}
+
+duration ={
+    "engineering": "4 years",
+    "mba": "2 years",
+    "arts": "3 years",
+    "science": "3 years"
+}
+
+seats = {
+    "computer science": "120",
+    "mechanical": "110",
+    "electrical": "100",
+    "civil": "60",
+    "chemical": "45",
+    "marketing": "120",
+    "finance": "110",
+    "hr": "90",
+    "operations": "130",
+    "international business": "110",
+    "english": "90",
+    "history": "80",
+    "psychology": "60",
+    "philosophy": "70",
+    "physics":"120",
+    "chemistry": "80",
+    "biology": "100",
+    "mathematics": "70"
+}
+
 
 class ActionDefaultFallback(Action):
     def name(self) -> Text:
@@ -64,29 +93,53 @@ class ActionProvideInfo(Action):
         return []
 
 
-class ActionProcessReq(Action):
+class ActionProcess(Action):
     def name(self) -> Text:
-        return "action_process_req"
+        return "action_process"
     
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
         pgm = tracker.get_slot("pgm")
+        field = tracker.get_slot("field")
         try:
             process = pgm_process[pgm]
         except: process = "Bad_input"
-
-        field = tracker.get_slot("field")
-        try:
-            req = requirements[pgm]
-        except: req = "Bad_input"
 
         if field.lower() in course[pgm]:
             if process == "Bad_input":
                 output="Im sorry. We do not offer this program"
             else:
-                output = f"For {pgm} in {field}:\n{process}\n{req}"
+                output = f"For {pgm} in {field}:\n{process}"
+        else:
+            output = "Im sorry. This course is not offered by the institute"
+        
+
+        dispatcher.utter_message(text=output)
+
+        return []
+    
+    
+class ActionEligibility(Action):
+    def name(self) -> Text:
+        return "action_eligibility"
+    
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        pgm = tracker.get_slot("pgm")
+        field = tracker.get_slot("field")
+        try:
+            req = eligibility[pgm]
+        except: req = "Bad_input"
+
+        if field.lower() in course[pgm]:
+            if req == "Bad_input":
+                output="Im sorry. We do not offer this program"
+            else:
+                output = f"For {pgm} in {field}:\n{req}"
         else:
             output = "Im sorry. This course is not offered by the institute"
         
@@ -96,3 +149,48 @@ class ActionProcessReq(Action):
         return []
 
 
+class ActionDuration(Action):
+    def name(self) -> Text:
+        return "action_duration"
+    
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        pgm = tracker.get_slot("pgm")
+        field = tracker.get_slot("field")
+        try:
+            info = duration[pgm]
+        except: info = "Bad_input"
+
+        if info == "Bad_input":
+            output="Im sorry. We do not offer this program"
+        else:
+            output = f"The duration of {pgm} course is {info}"
+
+        dispatcher.utter_message(text=output)
+
+        return []
+    
+class ActionSeats(Action):
+    def name(self) -> Text:
+        return "action_seats"
+    
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        pgm = tracker.get_slot("pgm")
+        field = tracker.get_slot("field")
+        try:
+            info = seats[field]
+        except: info = "Bad_input"
+
+        if info == "Bad_input":
+            output="Im sorry. We do not offer this field"
+        else:
+            output = f"The number of seats for {pgm} in {field} is {info}"
+
+        dispatcher.utter_message(text=output)
+
+        return []
