@@ -29,26 +29,6 @@ nlu:
     - bye bye
     - see you later
 
-- intent: affirm
-  examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
-    - sure
-
-- intent: deny
-  examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
-    - i dont want to
 
 - intent: procedure
   examples: |
@@ -78,6 +58,17 @@ nlu:
     - has my application been reviewed?
     - has my admission been confirmed?
     - when will I get the admission letter?
+
+- intent: eligibility
+  examples: |
+    - am I eligible for admission?
+    - what is the eligibility crietria?
+    - What are the qualifications needed for eligibility?
+    - What are the conditions for eligibility?
+    - What do I need to be eligible?
+    - What standards must I meet to be eligible?
+    - What are the prerequisites for eligibility?
+    - Can i apply?
     
 
 - intent: deadlines
@@ -122,6 +113,14 @@ nlu:
     - I need financial aid for education. Can it be arranged?
     - I need help with fees. What are my options?
 
+- intent: duration
+  examples: |
+    - How long does the course take?
+    - What is the duration of the program?
+    - How many years is this course?
+    - What is the length of the course?
+
+
 - intent: choose_pgm
   examples: |
     - I am interested in [engineering](pgm)
@@ -150,14 +149,23 @@ nlu:
     - I want to persue [biology](field)
     - [mathematics](field)
 
+- intent: seats
+  examples: |
+    - How many seats are available?
+    - What is the intake capacity of the course?
+    - How many students can be admitted?
+    - What is the total number of seats available?
+    - Can you tell me the number of seats available?
+    - What is the seat capacity of the program?
+    - How many students can be enrolled?
+    - What is the total intake of the course?
 
 - intent: random
   examples: |
     - What is your name?
     - What is the fees?
-    - What is the duration of the course?
     - 1
-
+   
 - intent: agreement
   examples: |
     - Okay
