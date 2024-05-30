@@ -22,14 +22,16 @@ This is a College Admission Chatbot built using the Rasa framework. The bot assi
 ## Features
 
 - **Intuitive Conversations**: Capable of understanding and responding to a variety of queries related to college admissions.
-- **Course and Program Information**: Provides information about the courses and programs offered by the college.
+- **Guided Procedures**: Provides step-by-step instructions for the admission process.
+- **Status Checks**: Allows users to inquire about the status of their application.
 - **Deadline Information**: Offers information on important deadlines for applications.
 - **Campus Facilities**: Shares details about the facilities available on campus.
 - **Contact Information**: Provides contact details for the admissions office.
 - **Scholarship Information**: Guides users on available scholarships and financial aid.
+- **Course Information**: Provides details about course duration, eligibility, and available seats.
 - **Custom Responses**: Ability to handle custom queries and provide relevant information.
 
-## Example Queries
+## Queries which can be answered
 
 Here are some example queries the chatbot can answer:
 
@@ -40,6 +42,10 @@ Here are some example queries the chatbot can answer:
 - **Admission Procedures**:
   - "What is the procedure for admission?"
   - "How can I apply for admission?"
+  
+- **Status Checks**:
+  - "What is the status of my application?"
+  - "Has my application been approved?"
   
 - **Deadlines**:
   - "What is the deadline for submitting my application?"
@@ -56,12 +62,23 @@ Here are some example queries the chatbot can answer:
 - **Scholarships**:
   - "Are there any scholarships available?"
   - "How can I apply for financial aid?"
+  
+- **Course Duration**:
+  - "What is the duration of the MBA program?"
+  - "How long does the engineering course take?"
+  
+- **Available Seats**:
+  - "How many seats are available for the Computer Science program?"
+  - "What is the intake capacity for the MBA course?"
+  
+- **Eligibility Criteria**:
+  - "What are the eligibility criteria for the engineering program?"
+  - "Am I eligible for the MBA course with my current qualifications?"
+  
+- **Agreement**:
+  - "Okay, thanks for the information."
+  - "That sounds good."
 
-- **Courses and Programs**:
-  - "What courses do you offer?"
-  - "Tell me about the engineering program."
-  - "Can you provide details on the computer science field?"
-  - "What are the arts courses available?"
 
 
 ## Installation
