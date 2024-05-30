@@ -66,7 +66,12 @@ Here are some example queries the chatbot can answer:
 
 ## Installation
 
-1. **Download the Directory**:
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/hebbarshriya/AIML_Project-Series
+   cd Project2[Basic-Q-&-A-Bot-for-College-Admission]
+   cd rasaChat
+   ```
 
 2. **Install Rasa**:
    ```bash
