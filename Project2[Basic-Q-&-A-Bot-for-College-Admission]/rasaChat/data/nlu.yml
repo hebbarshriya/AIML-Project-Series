@@ -1,0 +1,172 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - sure
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - i dont want to
+
+- intent: procedure
+  examples: |
+    - what is the procedure for admission?
+    - what is the admission process?
+    - how can I apply for admission?
+    - Can you help me with the process for admission?
+    - can I get a step-wise set of instructions for admission?
+    - what are the steps for admission?
+    - how do I submit my application?
+    - tell me how to apply.
+    - what is the process for submitting an application?
+    - how to get admission?
+
+- intent: status_check
+  examples: |
+    - how will I know if my application has been accepted? 
+    - by when will I get the results?
+    - has my application been approved?
+    - has my admission been processed?
+    - what is the status of my application?
+    - have I been admitted?
+    - when will I get the admission decision?
+    - how long does it take to get the admission decision?
+    - can you check the status of my application?
+    - what is the current status of my application?
+    - has my application been reviewed?
+    - has my admission been confirmed?
+    - when will I get the admission letter?
+    
+
+- intent: deadlines
+  examples: |
+    - what is the deadline for submitting my application?
+    - by when do I have to submit the form?
+    - what is the last date for admission?
+    - What is the admission deadline?
+    - When is the last date to apply?
+    - When do I need to submit my application by?
+    - Is the deadline for application close?
+
+- intent: facilities
+  examples: |
+    - what facilities are available on campus?
+    - what kind of infrastructure does the college have?
+    - what can I expect from the campus?
+    - does the campus have a library?
+    - what services do you offer?
+    - Are there any recreational facilities?
+    - what kind of support services are available?
+    - can I expect good facilities on campus?
+
+- intent: contact
+  examples: |
+    - how can I contact the admissions office?
+    - what is the phone number of the college?
+    - who to contact for further queries?
+    - can I get a number to contact for my questions?
+    - what is the email address of the admissions office?
+    - how can I reach out to the college?
+    - what is the contact information of the college?
+    - can I get the contact details of the admissions team?
+
+- intent: scholarship
+  examples: |
+    - How can I apply for financial aid?
+    - Are there any scholarships available?
+    - What are the requirements for getting a scholarship?
+    - Can I get a scholarship?
+    - Does the institute offer scholarships?
+    - I need financial aid for education. Can it be arranged?
+    - I need help with fees. What are my options?
+
+- intent: choose_pgm
+  examples: |
+    - I am interested in [engineering](pgm)
+    - I want to go for [mba](pgm)
+    - I want to persue [arts](pgm)
+    - [science](pgm)
+
+- intent: choose_field
+  examples: |
+    - I am interested in [Computer Science](field)
+    - I want to go for [Mechanical](field)
+    - I want to persue [Electrical](field)
+    - [Civil](field)
+    - Give me information on [Chemical](field)
+    - I am interested in [Marketing](field)
+    - I want to go for [Finance](field)
+    - I want to persue [HR](field)
+    - [International Business](field)
+    - Give me information on [Operations](field)
+    - I am interested in [english](field)
+    - I want to go for [history](field)
+    - I want to persue [psychology](field)
+    - [physiology](field)
+    - I am interested in [physics](field)
+    - I want to go for [chemistry](field)
+    - I want to persue [biology](field)
+    - [mathematics](field)
+
+
+- intent: random
+  examples: |
+    - What is your name?
+    - What is the fees?
+    - What is the duration of the course?
+    - 1
+
+- intent: agreement
+  examples: |
+    - Okay
+    - Ok
+    - Thanks for the information
+    - That's great
+    - That sounds good
+    - Great
+
+
+
+

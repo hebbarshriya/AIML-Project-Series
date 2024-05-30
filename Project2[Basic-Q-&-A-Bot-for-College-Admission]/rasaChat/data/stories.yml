@@ -1,0 +1,69 @@
+version: "3.1"
+
+stories:
+
+- story: starting
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_intro
+  - action: utter_help_ques
+
+- story: get_info_no
+  steps:
+  - intent: procedure
+  - action: utter_may_ques
+  - intent: deny
+  - action: utter_info_no
+ 
+- story: get_info_yes
+  steps:
+  - intent: procedure
+  - action: utter_may_ques
+  - intent: affirm
+  - action: utter_info_pgm
+  - intent: choose_pgm
+  - action: action_provide_info
+  - intent: choose_field
+  - action: action_process_req
+
+
+- story: scholarship
+  steps:
+  - intent: scholarship
+  - action: utter_scholarship
+
+- story: app_status
+  steps:
+  - intent: status_check
+  - action: utter_status
+
+- story: deadlines
+  steps:
+  - intent: deadlines
+  - action: utter_deadline
+
+- story: campus_facilities
+  steps:
+  - intent: facilities
+  - action: utter_facilities
+
+- story: contact_info
+  steps:
+  - intent: contact
+  - action: utter_contact
+
+- story: end
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: random
+  steps:
+  - intent: random
+  - action: utter_default
+
+- story: okay
+  steps:
+  - intent: agreement
+  - action: utter_agreement
