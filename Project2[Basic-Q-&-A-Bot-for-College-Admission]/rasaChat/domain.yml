@@ -3,8 +3,6 @@ version: "3.1"
 intents:
   - greet
   - goodbye
-  - affirm
-  - deny
   - procedure
   - status_check
   - deadlines
@@ -15,7 +13,9 @@ intents:
   - choose_field
   - random
   - agreement
-  - bot_challenge
+  - duration
+  - seats
+  - eligibility
 
 entities:
   - pgm
@@ -24,7 +24,11 @@ entities:
 actions:
   - action_default_fallback
   - action_provide_info
-  - action_process_req
+  - action_process
+  - action_duration
+  - action_eligibility
+  - action_seats
+  
 
 slots:
   pgm:
@@ -43,16 +47,13 @@ slots:
 
 responses:
   utter_greet:
-  - text: "Hi! I am your admission bot."
+  - text: "Hi! I am your admissions bot."
 
   utter_intro:
-  - text: "Our college is a vibrant community dedicated to academic excellence and student success. We offer a wide range of programs in various disciplines, state-of-the-art facilities, and a supportive environment for learning and growth. Our faculty are experienced professionals committed to providing quality education and preparing students for successful careers. We also emphasize extracurricular activities, community engagement, and holistic development."
+  - text: "Our college is a vibrant community dedicated to academic excellence and student success. We offer a wide range of programs in various disciplines, state-of-the-art facilities, and a supportive environment for learning and growth. Our faculty are experienced professionals committed to providing quality education and preparing students for successful careers. We also emphasize extracurricular activities, community engagement, and holistic development.\n"
 
   utter_help_ques:
   - text: "How may I help you today?"
-
-  utter_may_ques:
-  - text: "May ask you a few questions to help give better answers?"
 
   utter_status:
   - text: "Your application is currently under review. We will notify you once a decision has been made. You can expect a reply by 21st June."
@@ -61,7 +62,7 @@ responses:
   - text: "The college offers several scholarships based on academic merit, financial need, and special categories such as sports or cultural excellence. Detailed information and application forms are available on the college website."
 
   utter_deadline:
-  - text: "The last date for submitting applications along with required documents is 30th May"
+  - text: "The last date for submitting applications along with required documents is 30th June"
 
   utter_facilities:
   - text: "The college provides state-of-the-art facilities including libraries, laboratories, sports complexes, and student housing."
@@ -73,10 +74,7 @@ responses:
   - text: "Bye. Hope this conversation was helpul. Have a great day! "
 
   utter_info_pgm:
-  - text: "Which of our programs would you like to opt for? We have courses in Engineering, Management, Arts, and Science."
-
-  utter_info_no:
-  - text: "Ok thats not a problem. The application process for the programs typically involves filling out an online application form, submitting academic transcripts, entrance exam scores (if applicable), letters of recommendation, a statement of purpose, and sometimes a personal interview."
+  - text: "Which of our programs are you interested in? We have courses in Engineering, Management, Arts, and Science."
 
   utter_default:
   - text: "I'm sorry, I didn't understand that. Can you please rephrase your question or ask something else about college admissions?"
