@@ -7,28 +7,34 @@ stories:
   - intent: greet
   - action: utter_greet
   - action: utter_intro
-  - action: utter_help_ques
-
-- story: get_info_no
-  steps:
-  - intent: procedure
-  - action: utter_may_ques
-  - intent: deny
-  - action: utter_info_no
- 
-- story: get_info_yes
-  steps:
-  - intent: procedure
-  - action: utter_may_ques
-  - intent: affirm
   - action: utter_info_pgm
   - intent: choose_pgm
   - action: action_provide_info
   - intent: choose_field
-  - action: action_process_req
+  - action: utter_help_ques
+
+- story: get_procedure
+  steps:
+  - intent: procedure
+  - action: action_process
+ 
+- story: get_eligibility 
+  steps:
+  - intent: eligibility
+  - action: action_eligibility
+
+- story: get_duration
+  steps:
+  - intent: duration
+  - action: action_duration
+
+- story: get_seats
+  steps:
+  - intent: seats
+  - action: action_seats
 
 
-- story: scholarship
+- story: get_scholarship
   steps:
   - intent: scholarship
   - action: utter_scholarship
@@ -38,7 +44,7 @@ stories:
   - intent: status_check
   - action: utter_status
 
-- story: deadlines
+- story: get_deadlines
   steps:
   - intent: deadlines
   - action: utter_deadline
